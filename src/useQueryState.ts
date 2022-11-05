@@ -10,5 +10,13 @@ export function useQueryState(defaultValue: string, key: string) {
     setSearchParams(searchParams);
   }, [value, setSearchParams]);
 
+  // clear the query param on unmount
+  useEffect(() => {
+    return () => {
+      searchParams.delete(key);
+      setSearchParams(searchParams);
+    };
+  }, []);
+
   return [value, setValue] as [string, (newValue: string) => void];
 }
