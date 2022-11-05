@@ -29,5 +29,8 @@
   "peerDependencies": {
     "react": "18.x",
     "react-router-dom": "6.x"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.25"
   }
 }
