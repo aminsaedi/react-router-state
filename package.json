@@ -1,7 +1,7 @@
 {
   "name": "react-router-state",
-  "version": "0.1.2",
-  "description": "react state like which use query params to save value",
+  "version": "1.0.0",
+  "description": "React state api which append value to quey params",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
