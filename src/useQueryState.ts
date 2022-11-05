@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 export function useQueryState(
   defaultValue: string,
   key: string,
-  config: { cleanOnUnmount?: boolean } = { cleanOnUnmount: true }
+  config: { cleanOnUnmount?: boolean } = { cleanOnUnmount: false }
 ) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [value, setValue] = useState(searchParams.get(key) || defaultValue);

@@ -1,6 +1,6 @@
 {
   "name": "react-router-state",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "React state api which append value to quey params",
   "keywords": [
     "react",
