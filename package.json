@@ -12,6 +12,19 @@
     "build": "rm -rf ./dist/ && tsc"
   },
   "author": "Amin Saedi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aminsaedi/react-router-state"
+  },
+  "keywords": [
+    "react",
+    "router",
+    "state",
+    "query",
+    "params",
+    "param-state",
+    "search-state"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "react-router-dom": "6.x",
