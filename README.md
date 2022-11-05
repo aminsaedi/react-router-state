@@ -2,6 +2,12 @@
 
 <p align="center">React state api which append value to quey params</p>
 
+## Preview
+
+Open this example on [StackBlitz](https://stackblitz.com):
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/react-ts-idndo7?file=App.tsx)
+
 ## API
 
 ### useQueryState(defaultValue, key)
@@ -14,7 +20,7 @@
 ## Example
 
 ```jsx
-import useQueryState from 'react-router-state';
+import {useQueryState} from 'react-router-state';
 
 export default function () => {
     const [value, setValue] = useQueyState("john", "name");
