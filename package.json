@@ -1,11 +1,20 @@
 {
   "name": "react-router-state",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "react state like which use query params to save value",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf ./dist/ && tsc"
   },
   "author": "Amin Saedi",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "react-router-dom": "6.x",
+    "react": "18.x"
+  }
 }
