@@ -2,20 +2,6 @@
   "name": "react-router-state",
   "version": "1.0.0",
   "description": "React state api which append value to quey params",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "/dist"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf ./dist/ && tsc"
-  },
-  "author": "Amin Saedi",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aminsaedi/react-router-state"
-  },
   "keywords": [
     "react",
     "router",
@@ -25,9 +11,23 @@
     "param-state",
     "search-state"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aminsaedi/react-router-state"
+  },
   "license": "MIT",
+  "author": "Amin Saedi",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist/ && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "peerDependencies": {
-    "react-router-dom": "6.x",
-    "react": "18.x"
+    "react": "18.x",
+    "react-router-dom": "6.x"
   }
 }
