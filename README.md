@@ -24,12 +24,14 @@ yarn add react-router-state
 
 ## API
 
-### useQueryState(defaultValue, key)
+### const [value, setValue] = useQueryState(key, defaultValue)
 
-|     Name     |  Type  |          Description           |
-| :----------: | :----: | :----------------------------: |
-| defaultValue | string |      default state value       |
-|     key      | string | param key to append to the url |
+|     Name     |                     Type                     |          Description           |
+| :----------: | :------------------------------------------: | :----------------------------: |
+| defaultValue |                    string                    |      default state value       |
+|     key      |                    string                    | param key to append to the url |
+|    value     |                    string                    |         current value          |
+|   setValue   | React.Dispatch<React.SetStateAction<string>> |        set state value         |
 
 ## Example
 

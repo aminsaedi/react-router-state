@@ -1,6 +1,6 @@
 {
   "name": "react-router-state",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "React state api which append value to quey params",
   "keywords": [
     "react",
@@ -23,8 +23,7 @@
     "/dist"
   ],
   "scripts": {
-    "build": "rm -rf ./dist/ && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./dist/ && tsc && uglifyjs --compress --mangle -o dist/useQueryState.min.js -- dist/useQueryState.js"
   },
   "peerDependencies": {
     "react": "18.x",
