@@ -39,7 +39,7 @@ yarn add react-router-state
 import { useQueryState } from 'react-router-state';
 
 export default function () => {
-    const [value, setValue] = useQueryState("john", "name");
+    const [value, setValue] = useQueryState("name", "john");
 
     return (
         <div>
@@ -58,7 +58,7 @@ export default function () => {
 There are some cases that you want to have a persistance state when you share a url of you web application to someone else. For example you click on a button which opens a modal and you want to share the link and the modal should be open once the app is loaded. use can do something like this example:
 
 ```jsx
-const [isOpen, setIsOpen] = useQueryState("false", "isModalOpen");
+const [isOpen, setIsOpen] = useQueryState("isModalOpen", "false");
 
 return (
   <div>
