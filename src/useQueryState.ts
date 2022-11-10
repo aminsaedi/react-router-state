@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useSearchParams } from "react-router-dom";
 
-export function useQueryState(key: string, defaultValue: string) {
+export function useQueryState(key: string, defaultValue: any) {
   const [searchParams, setSearchParams] = useSearchParams();
   const queryValue = JSON.stringify({ data: searchParams.get(key) });
   const [value, setValue] = React.useState(
@@ -32,5 +32,5 @@ export function useQueryState(key: string, defaultValue: string) {
     }
   }, [queryValue]);
 
-  return [value, onSetValue];
+  return [JSON.parse(value)?.data || defaultValue, onSetValue];
 }
