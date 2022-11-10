@@ -10,12 +10,12 @@ export function useQueryState(key: string, defaultValue: string) {
 
   const onSetValue = React.useCallback(
     (newValue: any): React.Dispatch<React.SetStateAction<string>> => {
-      if (typeof newValue === "string") {
+      if (typeof newValue !== "function") {
         const stringified = JSON.stringify({ data: newValue });
         setValue(stringified);
         searchParams.set(key, stringified);
         setSearchParams(searchParams);
-      } else if (typeof newValue === "function") {
+      } else {
         const stringified = JSON.stringify({ data: newValue(value) });
         setValue(stringified);
         searchParams.set(key, stringified);
