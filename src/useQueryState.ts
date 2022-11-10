@@ -1,25 +1,24 @@
 import * as React from "react";
 import { useSearchParams } from "react-router-dom";
 
-export function useQueryState(
-  key: string,
-  defaultValue: string,
-  config: { cleanOnUnmount?: boolean } = { cleanOnUnmount: false }
-) {
+export function useQueryState(key: string, defaultValue: string) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const queryValue = searchParams.get(key);
-  const [value, setValue] = React.useState<string>(queryValue || defaultValue);
+  const queryValue = JSON.stringify({ data: searchParams.get(key) });
+  const [value, setValue] = React.useState(
+    defaultValue ? JSON.stringify({ data: defaultValue }) : queryValue
+  );
 
   const onSetValue = React.useCallback(
     (newValue: any): React.Dispatch<React.SetStateAction<string>> => {
       if (typeof newValue === "string") {
-        setValue(newValue);
-        searchParams.set(key, newValue);
+        const stringified = JSON.stringify({ data: newValue });
+        setValue(stringified);
+        searchParams.set(key, stringified);
         setSearchParams(searchParams);
       } else if (typeof newValue === "function") {
-        const result = newValue(value);
-        setValue(result);
-        searchParams.set(key, result);
+        const stringified = JSON.stringify({ data: newValue(value) });
+        setValue(stringified);
+        searchParams.set(key, stringified);
         setSearchParams(searchParams);
       }
       return;
@@ -29,7 +28,7 @@ export function useQueryState(
 
   React.useEffect(() => {
     if (value !== queryValue) {
-      setValue(queryValue || defaultValue);
+      setValue(queryValue || JSON.stringify({ data: defaultValue }));
     }
   }, [queryValue]);
 
